@@ -90,8 +90,8 @@ export default {
           if (valid) {
             axios
               .post("http://127.0.0.1:3000/dataPost", this.loginform, {
-						'Content-Type':'application/x-www-form-urlencoded','Access-Control-Allow-Origin':'*'
-					})
+	      'Content-Type':'application/x-www-form-urlencoded','Access-Control-Allow-Origin':'*'
+	       })
               .then((res) => {
                 // console.log(res)
                 // console.log(res.data.code)
