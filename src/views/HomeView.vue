@@ -1,5 +1,8 @@
 <template>
   <div class="FlipClock">
+	<h2>
+		{{state.name}}
+	</h2>
     <Flipper ref="flipperYear1" />
     <Flipper ref="flipperYear2" />
     <Flipper ref="flipperYear3" />
@@ -24,7 +27,7 @@
 
 <script>
 import Flipper from './Flipper'
-
+import store from "./store.js"
 export default {
   name: 'FlipClock',
   props:{
@@ -37,6 +40,7 @@ export default {
     return {
       timer: null,
       flipObjs: [],
+	state:store.state
     }
   },
   components: {
@@ -138,14 +142,14 @@ export default {
 <style>
 .FlipClock {
     text-align: center;
-    line-height: 700px;
+    line-height: 200px;
 }
 .FlipClock .M-Flipper {
     margin: 0 0px;
 }
 .FlipClock em {
     display: inline-block;
-    line-height: 602px;
+    line-height: 102px;
     font-size: 66px;
     font-style: normal;
     vertical-align: top;
