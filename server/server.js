@@ -70,6 +70,7 @@ router.post("/dataPost", async ctx => {
         ctx.body = {
             code: 666,
             msg: "密码正确",
+			username:username
         }
     } else {
         console.log("密码不正确 " + "PW: " + DB[username] + "UN: " + username)
