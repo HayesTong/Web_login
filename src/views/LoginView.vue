@@ -46,11 +46,11 @@
 
 <script>
 import axios from "axios";
-import store from "./store.js"
+// import store from "./store.js";
 export default {
   data() {
     return {
-		name:"",
+      name: "",
       loginform: {
         username: "666",
         password: "",
@@ -90,9 +90,11 @@ export default {
           });
         } else {
           if (valid) {
-            axios.post("http://127.0.0.1:3000/dataPost", this.loginform, {
-			'Content-Type':'application/x-www-form-urlencoded','Access-Control-Allow-Origin':'*',
-			})
+            axios
+              .post("http://127.0.0.1:3000/dataPost", this.loginform, {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Access-Control-Allow-Origin": "*",
+              })
               .then((res) => {
                 // console.log(res)
                 // console.log(res.data.code)
@@ -106,11 +108,11 @@ export default {
 
                     // this.$cookieStore.setCookie( 'username' ,this.username,20);
                     // console.log(this.$cookieStore.setCookie)
-                    this.$cookies.set('username' ,res.data.code,20);
-					this.$router.push("/");
-                    console.log(this.$cookies.get("username"))
-					store.setStateMessage(res.data.username);
-					console.log(store.state.name)
+                    this.$cookies.set("username", res.data.username, 20);
+                    this.$router.push("/");
+                    console.log(this.$cookies.get("username"));
+                    // store.setStateMessage(res.data.username);
+                    // console.log(store.state.name);
                     break;
 
                   case 555:
