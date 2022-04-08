@@ -1,7 +1,8 @@
 let DB = {
     "12345": "54321",
     "ABCD": "DCBA",
-    "abcd": "dcba"
+    "abcd": "dcba",
+    "罗翔说你真刑": "666"
 }
 
 const Koa = require("koa")
@@ -70,7 +71,7 @@ router.post("/dataPost", async ctx => {
         ctx.body = {
             code: 666,
             msg: "密码正确",
-			username:username
+            username: username
         }
     } else {
         console.log("密码不正确 " + "PW: " + DB[username] + "UN: " + username)
